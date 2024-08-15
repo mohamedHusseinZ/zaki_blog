@@ -202,32 +202,5 @@ if __name__ == '__main__':
 
 
 
-Flask==2.0.2
-Flask-SQLAlchemy==3.0.2
-Flask-Migrate==3.1.0
-Werkzeug==2.0.2
 
-# Use the official lightweight Python image.
-FROM python:3.10-alpine
-
-# Set environment variables
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
-
-# Set the working directory in the container
-WORKDIR /app
-
-# Copy and install requirements
-COPY requirements.txt /app/
-RUN pip install --upgrade pip
-RUN pip install -r requirements.txt
-
-# Copy the application code to the working directory
-COPY . /app
-
-# Expose port 4433
-EXPOSE 4433
-
-# Run the application
-CMD ["python", "app.py"]
 
